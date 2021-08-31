@@ -20,7 +20,7 @@ NoSQL and non-relational databases!
 %setup -q -n %{name}-%{version}
 
 %build
-CGO_ENABLED=on GO111MODULE=on go build -tags most -o %{_builddir}/bin/%{name}
+CGO_ENABLED=on GO111MODULE=on go build -tags 'most sqlite_app_armor sqlite_fts5 sqlite_introspect sqlite_json1 sqlite_stat4 sqlite_userauth sqlite_vtable sqlite_icu no_adodb' -o %{_builddir}/bin/%{name}
 
 %install
 install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}

@@ -4,9 +4,10 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
     disableConcurrentBuilds()
+    ansiColor('xterm')
   }
   agent {
-    label 'rpm'
+    label 'rpmbuild'
   }
   stages {
     stage('Prepare') {
@@ -16,16 +17,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        ansiColor('xterm') {
-          sh './build 7 golang'
-        }
+        sh './build 7 golang'
       }
     }
     stage('Sign') {
       steps {
-        ansiColor('xterm') {
-          rpmSign()
-        }
+        rpmSign()
       }
     }
     stage('Publish') {
