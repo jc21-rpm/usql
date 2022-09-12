@@ -4,8 +4,8 @@
 
 Name:           usql
 Version:        0.12.13
-Release:        1%{?dist}
-Summary:        Universal command-line interface for SQL databases 
+Release:        1
+Summary:        Universal command-line interface for SQL databases
 Group:          Applications/System
 License:        MIT
 URL:            https://github.com/%{gh_user}/%{name}
