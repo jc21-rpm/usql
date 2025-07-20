@@ -3,7 +3,7 @@
 %global gh_user xo
 
 Name:           usql
-Version:        0.19.24
+Version:        0.19.25
 Release:        1%{?dist}
 Summary:        Universal command-line interface for SQL databases
 Group:          Applications/System
@@ -20,7 +20,7 @@ NoSQL and non-relational databases!
 %setup -q -n %{name}-%{version}
 
 %build
-CGO_ENABLED=on GO111MODULE=on go build -tags 'most sqlite_app_armor sqlite_fts5 sqlite_introspect sqlite_json1 sqlite_stat4 sqlite_userauth sqlite_vtable sqlite_icu no_adodb' -o %{_builddir}/bin/%{name}
+CGO_ENABLED=on GO111MODULE=on go build -tags 'linux most sqlite_app_armor sqlite_fts5 sqlite_introspect sqlite_json1 sqlite_stat4 sqlite_userauth sqlite_vtable sqlite_icu no_adodb' -o %{_builddir}/bin/%{name}
 
 %install
 install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
@@ -29,6 +29,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Mon Jul 21 2025 Jamie Curnow <jc@jc21.com> 0.19.25-1
+- https://github.com/xo/usql/releases/tag/v0.19.25
+
 * Tue May 20 2025 Jamie Curnow <jc@jc21.com> 0.19.24-1
 - https://github.com/xo/usql/releases/tag/v0.19.24
 
