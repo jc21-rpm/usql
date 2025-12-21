@@ -3,7 +3,7 @@
 %global gh_user xo
 
 Name:           usql
-Version:        0.19.25
+Version:        0.20.0
 Release:        1%{?dist}
 Summary:        Universal command-line interface for SQL databases
 Group:          Applications/System
@@ -29,6 +29,12 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Mon Dec 22 2025 Jamie Curnow <jc@jc21.com> 0.20.0-1
+- https://github.com/xo/usql/releases/tag/v0.20.0
+
+* Wed Oct 1 2025 Jamie Curnow <jc@jc21.com> 0.19.26-1
+- https://github.com/xo/usql/releases/tag/v0.19.26
+
 * Mon Jul 21 2025 Jamie Curnow <jc@jc21.com> 0.19.25-1
 - https://github.com/xo/usql/releases/tag/v0.19.25
 
