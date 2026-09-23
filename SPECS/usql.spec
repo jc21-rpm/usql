@@ -35,7 +35,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 * Mon Sep 14 2026 Jamie Curnow <jc@jc21.com> 0.21.5-1
 - https://github.com/xo/usql/releases/tag/v0.21.5
 
-* Fri Apr 27 2026 Jamie Curnow <jc@jc21.com> 0.21.4-1
+* Fri Apr 24 2026 Jamie Curnow <jc@jc21.com> 0.21.4-1
 - https://github.com/xo/usql/releases/tag/v0.21.4
 
 * Thu Mar 26 2026 Jamie Curnow <jc@jc21.com> 0.21.3-1
@@ -77,7 +77,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 * Tue Mar 4 2025 Jamie Curnow <jc@jc21.com> 0.19.18-1
 - https://github.com/xo/usql/releases/tag/v0.19.18
 
-* Tue Feb 22 2025 Jamie Curnow <jc@jc21.com> 0.19.17-1
+* Sat Feb 22 2025 Jamie Curnow <jc@jc21.com> 0.19.17-1
 - https://github.com/xo/usql/releases/tag/v0.19.17
 
 * Tue Jan 14 2025 Jamie Curnow <jc@jc21.com> 0.19.16-1
