@@ -11,6 +11,11 @@ License:        MIT
 URL:            https://github.com/%{gh_user}/%{name}
 Source:         https://github.com/%{gh_user}/%{name}/archive/v%{version}.tar.gz
 
+# duckdb's prebuilt static libs need a newer libstdc++ than el8's gcc 8
+%if 0%{?rhel} == 8
+BuildRequires:  gcc-toolset-13-gcc-c++
+%endif
+
 %description
 usql is a universal command-line interface for PostgreSQL, MySQL, Oracle
 Database, SQLite3, Microsoft SQL Server, and many other databases including
@@ -20,6 +25,9 @@ NoSQL and non-relational databases!
 %setup -q -n %{name}-%{version}
 
 %build
+%if 0%{?rhel} == 8
+source /opt/rh/gcc-toolset-13/enable
+%endif
 CGO_ENABLED=on GO111MODULE=on go build -tags 'linux most sqlite_app_armor sqlite_fts5 sqlite_introspect sqlite_json1 sqlite_stat4 sqlite_userauth sqlite_vtable sqlite_icu no_adodb' -o %{_builddir}/bin/%{name}
 
 %install
